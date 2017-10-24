@@ -43,7 +43,7 @@
 				<version>2.3.1</version>
 				<configuration>
 					<finalName>smartcar</finalName>
-					<outputDirectory>/home/hadoop/task</outputDirectory>
+					<outputDirectory>logger</outputDirectory>
 				</configuration>
 			</plugin>
 			
