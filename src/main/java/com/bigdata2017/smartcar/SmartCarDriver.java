@@ -22,7 +22,7 @@ public class SmartCarDriver extends Thread{
 		cInfo.setIsAdd(isAdd);
 		cInfo.setAreaTypeNum(randomRange(0,5));
 
-		System.setProperty("logFilename", "./logs/driving.log");
+		System.setProperty("logFilename", "./logs/driving/driving.log");
 
 		org.apache.logging.log4j.core.LoggerContext ctx =
 				(org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);

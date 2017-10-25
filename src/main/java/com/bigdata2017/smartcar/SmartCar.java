@@ -20,7 +20,7 @@ public class SmartCar extends Thread{
 		this.toDay = toDay;
 		cInfo.setCarNum(carNum);
 
-		System.setProperty("logFilename", "./logs/status_" + toDay + ".log");
+		System.setProperty("logFilename", "./logs/status/status_" + toDay + ".log");
 
 		org.apache.logging.log4j.core.LoggerContext ctx =
 				(org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
