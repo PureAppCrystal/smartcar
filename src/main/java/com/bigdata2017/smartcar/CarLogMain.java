@@ -9,32 +9,31 @@ import java.util.concurrent.Executors;
 public class CarLogMain {
 
 	public static void main(String[] args) {
-
 		String toDay =  getToDate();
-		
 		int carCount = 100;
-		if(args != null ) toDay = args[0];
-		if(args != null ) carCount = Integer.parseInt(args[1]);
+
+		if(args != null  && args.length > 1) {
+			toDay = args[0];
+		}
+		if(args != null && args.length > 1) {
+			carCount = Integer.parseInt(args[1]);
+		}
+		
 
 		ExecutorService exc = Executors.newFixedThreadPool(carCount); 
-
 		for(int i=1; i <= carCount ; i++) {
 			exc.submit(new SmartCar( getCarNum(i), toDay));
 		}
-
 	}
 
 
 	public static String getCarNum(int num) {
-
-		String[] carNumPrefix = {"A", "B" , "C" , "D" , "E" , "F", "G", "H", "I", "J", "K", "L", "M", "N"
-				, "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}; 
-
+		String[] carNumPrefix = {"A", "B" , "C" , "D" , "E" , "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}; 
 		String prefixNum = carNumPrefix[randomRange(0, 25)] ;
 
 		DecimalFormat format = new DecimalFormat("0000");
-
 		String carNum = format.format(num);
+
 		return prefixNum + carNum;
 	}
 
@@ -51,11 +50,8 @@ public class CarLogMain {
 
 		todaytime = System.currentTimeMillis(); 
 		day = new SimpleDateFormat("yyyyMMdd");
-
 		toDay =  day.format(new Date(todaytime));
 
 		return toDay;
-
 	}
-
 }

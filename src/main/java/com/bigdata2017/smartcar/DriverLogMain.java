@@ -11,15 +11,18 @@ import java.util.concurrent.Executors;
 public class DriverLogMain {
 
 	public static void main(String[] args) {
-
 		String toDay =  getToDate();
-		
 		int carCount = 100;
-		if(args != null) toDay = args[0];
-		if(args != null) carCount = Integer.parseInt(args[1]);
+		
+		if(args != null  && args.length > 1) {
+			toDay = args[0];
+		}
+		
+		if(args != null && args.length > 1) {
+			carCount = Integer.parseInt(args[1]);
+		}
 
 		ExecutorService exc = Executors.newFixedThreadPool(carCount); 
-
 		int wildDrivercnt = (int)(carCount * 0.1);
 
 		HashSet<Integer> wildCarSet = new HashSet<Integer>();
@@ -30,11 +33,9 @@ public class DriverLogMain {
 		Iterator<Integer> itr = wildCarSet.iterator();
 
 		boolean isWild = false;
-
 		int tmpWildCarNum;
 
 		for(int i=1; i <= carCount ; i++) {
-
 			while(itr.hasNext()) {
 				tmpWildCarNum = itr.next();
 				if( tmpWildCarNum == i) {
@@ -45,24 +46,18 @@ public class DriverLogMain {
 			}
 
 			itr = wildCarSet.iterator();
-
 			exc.submit(new SmartCarDriver( getCarNum(i), toDay, isWild));
-
 		}
-
 	}
 
 
 	public static String getCarNum(int num) {
 
-		String[] carNumPrefix = {"A", "B" , "C" , "D" , "E" , "F", "G", "H", "I", "J", "K", "L", "M", "N"
-				, "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}; 
-
+		String[] carNumPrefix = {"A", "B" , "C" , "D" , "E" , "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"}; 
 		String prefixNum = carNumPrefix[randomRange(0, 25)] ;
-
 		DecimalFormat format = new DecimalFormat("0000");
-
 		String carNum = format.format(num);
+		
 		return prefixNum + carNum;
 	}
 
@@ -72,18 +67,15 @@ public class DriverLogMain {
 	}
 
 	public static String getToDate() {
-
 		long todaytime;
 		SimpleDateFormat day;
 		String toDay;
 
 		todaytime = System.currentTimeMillis();
 		day = new SimpleDateFormat("yyyyMMdd");
-
 		toDay =  day.format(new Date(todaytime));
 
 		return toDay;
 
 	}
-
 }
