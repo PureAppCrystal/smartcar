@@ -3,14 +3,12 @@ package com.bigdata2017.smartcar;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
 
 public class GenStatusLog {
 
 	public static void main(String[] args) {
 		String toDay =  getToDate();
-		int carCount = 100;
+		int carCount = 1;
 
 		if(args != null  && args.length > 1) {
 			toDay = args[0];
@@ -19,10 +17,8 @@ public class GenStatusLog {
 			carCount = Integer.parseInt(args[1]);
 		}
 		
-
-		ExecutorService exc = Executors.newFixedThreadPool(carCount); 
 		for(int i = 1; i <= carCount ;i++) {
-			exc.submit( new GenStatusLogThread( getCarNum(i), toDay ) );
+			new GenStatusLogThread( getCarNum(i), toDay ).run();
 		}
 	}
 
