@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class CarStatusInfo {
+public class CarStatus {
 
 
 	public static <E> E getWeightedRandom(Map<E, Double> weights, Random random) { 

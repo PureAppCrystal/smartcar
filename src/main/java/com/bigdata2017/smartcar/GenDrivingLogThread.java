@@ -6,28 +6,24 @@ import java.util.Date;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class SmartCarDriver extends Thread{
+public class GenDrivingLogThread extends Thread{
 
-	private String carNum;
 	private String toDay;
 
 	Logger logger = LogManager.getLogger(this.getName());
 
-	CarDrivingInfo cInfo = new CarDrivingInfo();
+	CarDriving carDriving = new CarDriving();
 
-	public SmartCarDriver(String carNum, String toDay, boolean isAdd) {
-		this.carNum = carNum;
+	public GenDrivingLogThread( String carNum, String toDay, boolean isAdd ) {
 		this.toDay = toDay;
-		cInfo.setCarNum(carNum);
-		cInfo.setIsAdd(isAdd);
-		cInfo.setAreaTypeNum(randomRange(0,5));
+		carDriving.setCarNum(carNum);
+		carDriving.setIsAdd(isAdd);
+		carDriving.setAreaTypeNum(randomRange(0,5));
 
 		System.setProperty("logFilename", "./logs/driving/driving.log");
 
-		org.apache.logging.log4j.core.LoggerContext ctx =
-				(org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
+		org.apache.logging.log4j.core.LoggerContext ctx = (org.apache.logging.log4j.core.LoggerContext) LogManager.getContext(false);
 		ctx.reconfigure();
-
 	}
 	
 
@@ -49,25 +45,26 @@ public class SmartCarDriver extends Thread{
 						+ ",AreaNum");
 				
 			}
+			
 			logger.info(toDay + getSecToTime(i) 
-					+ "," + cInfo.getCarNum() 
+					+ "," + carDriving.getCarNum() 
 					
-					+ "," + cInfo.getAccStep()
-					+ "," + cInfo.getBrkStep()
-					+ "," + cInfo.getWheelStep()
+					+ "," + carDriving.getAccStep()
+					+ "," + carDriving.getBrkStep()
+					+ "," + carDriving.getWheelStep()
 					
-					+ "," + cInfo.getDirLightStep()
-					+ "," + cInfo.getSpeed() 
-					+ "," + cInfo.getAreaNum());
+					+ "," + carDriving.getDirLightStep()
+					+ "," + carDriving.getSpeed() 
+					+ "," + carDriving.getAreaNum());
+			
 			try {
 				sleep(1 * 100);
 			} catch (InterruptedException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			
 			i+=1;
 		}
-
 	}
 
 	public String getSecToTime(int inSec) {
