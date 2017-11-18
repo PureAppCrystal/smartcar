@@ -190,6 +190,7 @@ public class BusDriving {
 		else if(dirPrefix.equals("L")) this.dirLightStep = "L";
 		else if(dirPrefix.equals("R")) this.dirLightStep = "R";
 
+		
 
 		this.wheelStep = result;
 
