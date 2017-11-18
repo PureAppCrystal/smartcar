@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -6,7 +6,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class CarStatus {
+public class BusStatus {
 
 
 	public static <E> E getWeightedRandom(Map<E, Double> weights, Random random) { 

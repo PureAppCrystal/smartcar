@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -12,7 +12,7 @@ public class GenDrivingLogThread extends Thread{
 
 	Logger logger = LogManager.getLogger(this.getName());
 
-	CarDriving carDriving = new CarDriving();
+	BusDriving carDriving = new BusDriving();
 
 	public GenDrivingLogThread( String carNum, String toDay, boolean isAdd ) {
 		this.toDay = toDay;

@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -11,7 +11,7 @@ public class GenStatusLogThread extends Thread{
 	Logger logger = LogManager.getLogger(this.getName());
 	private String toDay;
 
-	CarStatus carStatus = new CarStatus();
+	BusStatus carStatus = new BusStatus();
 
 	public GenStatusLogThread(String carNum, String toDay ) {
 		this.toDay = toDay;

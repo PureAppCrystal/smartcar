@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -8,7 +8,7 @@ import java.util.Iterator;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class GenDrivingLog {
+public class BusDrivingLog {
 
 	public static void main(String[] args) {
 		

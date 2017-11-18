@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.text.DecimalFormat;
 import java.util.Random;
@@ -6,7 +6,7 @@ import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CarMasterIncomeMain {
+public class BusMasterIncomeMain {
 
 	public static Logger logger = LogManager.getLogger("CarMasterIncome");
 

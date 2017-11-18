@@ -1,10 +1,10 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-public class CarDriving {
+public class BusDriving {
 
 
 	public static <E> E getWeightedRandom(Map<E, Double> weights, Random random) { 

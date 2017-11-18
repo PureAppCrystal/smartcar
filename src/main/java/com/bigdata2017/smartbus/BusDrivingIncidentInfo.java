@@ -1,4 +1,4 @@
-package com.bigdata2017.smartcar;
+package com.bigdata2017.smartbus;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -7,7 +7,7 @@ import java.util.Random;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class CarDrivingIncidentInfo {
+public class BusDrivingIncidentInfo {
 
 	public static Logger logger = LogManager.getLogger("CarDrivingIncidentInfo");
 
